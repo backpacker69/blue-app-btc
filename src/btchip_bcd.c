@@ -56,7 +56,7 @@ btchip_convert_hex_amount_to_displayable(unsigned char WIDE *amount) {
         }
     }
 
-    for (i = 0; i < 13; i++) {
+    for (i = 0; i < 15; i++) {
         if (!nonZero && (scratch[offset] == 0)) {
             offset++;
         } else {
@@ -68,10 +68,10 @@ btchip_convert_hex_amount_to_displayable(unsigned char WIDE *amount) {
         btchip_context_D.tmp[targetOffset++] = '0';
     }
     workOffset = offset;
-    for (i = 0; i < 8; i++) {
+    for (i = 0; i < 6; i++) {
         unsigned char allZero = 1;
         unsigned char j;
-        for (j = i; j < 8; j++) {
+        for (j = i; j < 6; j++) {
             if (scratch[workOffset + j] != 0) {
                 allZero = 0;
                 break;
